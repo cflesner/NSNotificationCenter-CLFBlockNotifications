@@ -4,7 +4,7 @@ NSNotificationCenter-CLFBlockNotifications
 A category on NSNotificationCenter to make creating notifications with blocks a little cleaner.
 
 ## Motivation
-If you're like me, you prefer to set up your notifications using blocks instead of selectors. Although I prefer this method, I wanted a little cleaner syntax than having to use
+If you're like me, you prefer to set up your notifications using blocks instead of selectors. Although I prefer this method, I wanted a little cleaner syntax than having to use:
 ```objective-c
 self.myNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:MyNotificationName
 												 					    		object:nil
@@ -14,8 +14,8 @@ self.myNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverF
 }];
 ```
 
-```objective-c
 So I created this category to clean it up a little bit. Now the same notification can be created like this:
+```objective-c
 [[NSNotificationCenter defaultCenter] addObserverAtAddress:&_myNotificationObserver
 												   forName:MyNotificationName
 												usingBlock:^(NSNotification *note) {
