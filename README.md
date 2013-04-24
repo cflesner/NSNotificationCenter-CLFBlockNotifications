@@ -6,21 +6,30 @@ A category on NSNotificationCenter to make creating notifications with blocks a 
 ## Motivation
 If you're like me, you prefer to set up your notifications using blocks instead of selectors. Although I prefer this method, I wanted a little cleaner syntax than having to use:
 ```objective-c
+// Sign up for notification
 self.myNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverForName:MyNotificationName
 												 					    		object:nil
 												   								 queue:nil
 																    		usingBlock:^(NSNotification *note) {
     [self doSomethingAboutIt];
 }];
+
+// Remove observer
+[[NSNotifcationCenter defaultCenter] removeObserver:self.myNotificationObserver];
+self.myNotificationObserver = nil;
 ```
 
-So I created this category to clean it up a little bit. Now the same notification can be registered like this:
+So I created this category to clean it up a little bit. Now you can get the same result as the above code with this:
 ```objective-c
+// Sign up for notification
 [[NSNotificationCenter defaultCenter] addObserverAtAddress:&_myNotificationObserver
 												   forName:MyNotificationName
 												usingBlock:^(NSNotification *note) {
     [self doSomethingAboutIt];
 }];
+
+// Remove observer
+[[NSNotificationCenter defaultCenter] removeObserverAtAddress:&_myNotificationObserver];
 ```
 
 There are also methods to register for notifications with an object, with a queue, or with both.
@@ -45,7 +54,7 @@ There are also methods to register for notifications with an object, with a queu
     [[NSNotificationCenter defaultCenter] addObserverAtAddress:&_myNotificationObserver
     												   forName:MyNotificationName
     											    usingBlock:^(NSNotification *note) {
-        [self doSomethingAboutIt];
+        NSLog(@"Received notification: %@", note);
     }];
     // _myNotificationObserver is now set
 }
@@ -57,12 +66,6 @@ There are also methods to register for notifications with an object, with a queu
     
     [[NSNotificationCenter defaultCenter] removeObserverAtAddress:&_myNotificationObserver];
     // _myNotificationObserver is now nil
-}
-
-
-- (void)doSomethingAboutIt
-{
-   NSLog(@"Noted.");
 }
 
 @end
