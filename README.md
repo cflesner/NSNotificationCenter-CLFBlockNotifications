@@ -14,7 +14,7 @@ self.myNotificationObserver = [[NSNotificationCenter defaultCenter] addObserverF
 }];
 ```
 
-So I created this category to clean it up a little bit. Now the same notification can be created like this:
+So I created this category to clean it up a little bit. Now the same notification can be registered like this:
 ```objective-c
 [[NSNotificationCenter defaultCenter] addObserverAtAddress:&_myNotificationObserver
 												   forName:MyNotificationName
@@ -23,7 +23,7 @@ So I created this category to clean it up a little bit. Now the same notificatio
 }];
 ```
 
-Personally, I really prefer using this category, but your tastes may vary.
+There are also methods to register notifications with an object, with a queue, or with both.
 
 
 ## Example Usage
