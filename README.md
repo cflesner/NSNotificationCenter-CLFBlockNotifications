@@ -36,7 +36,7 @@ There are also methods to register for notifications with an object, with a queu
 @end
 
 
-@interface FooViewController
+@implementation FooViewController
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -64,6 +64,7 @@ There are also methods to register for notifications with an object, with a queu
 {
    NSLog(@"Noted.");
 }
+
 @end
 
 ```
