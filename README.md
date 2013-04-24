@@ -23,7 +23,7 @@ So I created this category to clean it up a little bit. Now the same notificatio
 }];
 ```
 
-There are also methods to register notifications with an object, with a queue, or with both.
+There are also methods to register for notifications with an object, with a queue, or with both.
 
 
 ## Example Usage
