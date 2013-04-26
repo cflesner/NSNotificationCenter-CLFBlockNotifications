@@ -39,7 +39,7 @@ There are also methods to register for notifications with an object, with a queu
 ```objective-c
 @interface FooViewController ()
 {
-	_id myNotificationObserver;
+	id _myNotificationObserver;
 }
 
 @end
