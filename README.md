@@ -1,6 +1,8 @@
 NSNotificationCenter-CLFBlockNotifications
 ==========================================
 
+!!! This category has been replaced by [NSObject+CLFNotificationObserver](https://github.com/cflesner/NSObject-CLFNotificationObserver) and is no longer being maintained. !!!
+
 A category on NSNotificationCenter to make creating notifications with blocks a little cleaner.
 
 ## Motivation
